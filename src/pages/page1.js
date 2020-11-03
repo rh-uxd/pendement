@@ -1,4 +1,5 @@
 import { PageSection, Title, Button } from '@patternfly/react-core';
+import { trackButton } from '../tracking';
 
 export const Page1 = () => (
   <PageSection>
@@ -6,6 +7,6 @@ export const Page1 = () => (
     <p>
       We would never track your every click.
     </p>
-    <Button>A different button</Button>
+    <Button onClick={trackButton}>A different button</Button>
   </PageSection>
 );

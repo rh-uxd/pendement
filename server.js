@@ -1,10 +1,6 @@
 // create an express app
-<<<<<<< HEAD
 const express = require("express");
 const bodyParser = require("body-parser");
-=======
-const express = require("express")
->>>>>>> origin/main
 const app = express();
 const Analytics = require('analytics-node');
 

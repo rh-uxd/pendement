@@ -23,7 +23,7 @@ const NavItem = ({ to, children }) => (
 
 export const App = () => {
   const [username, setUsername] = useState(sessionStorage.getItem('username'));
-  const [userId, setUserId] = useState('');
+  const [userEmail, setUserEmail] = useState('');
   const location = useLocation();
   useEffect(() => trackPage(location.pathname), [location]);
   
@@ -36,7 +36,7 @@ export const App = () => {
       <PageHeaderToolsGroup>
         <PageHeaderToolsItem>
           <div style={{ marginRight: '16px' }}>
-            {username} ({userId})
+            {username} ({userEmail})
           </div>
         </PageHeaderToolsItem>
         <PageHeaderToolsItem>
@@ -80,9 +80,9 @@ export const App = () => {
     <Switch>
       <Route path="/login">
         <Page header={Header}>
-          <LoginPage onLogin={(name, id) => {
+          <LoginPage onLogin={(name, email) => {
             setUsername(name);
-            setUserId(id);
+            setUserEmail(email);
           }} />
         </Page>
       </Route>

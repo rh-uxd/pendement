@@ -55,8 +55,8 @@ app.post("/api/login", function (req, res) {
   const type = createUser(username);
   res.json({
     id: username,
-    name: allUsers[id].name,
-    email: allUsers[id].email,
+    name: allUsers[username].name,
+    email: allUsers[username].email,
     type,
   });
 });

@@ -1,24 +1,46 @@
 {
   "name": "pendement",
-  "version": "1.0.0",
-  "description": "pende mint",
+  "version": "0.0.1",
+  "description": "Pendo + Segment",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve",
+    "build": "yarn clean && webpack",
+    "clean": "rimraf public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rh-uxd/pendement.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "react",
+    "pendo",
+    "segment"
+  ],
+  "author": "Red Hat",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rh-uxd/pendement/issues"
   },
   "homepage": "https://github.com/rh-uxd/pendement#readme",
   "dependencies": {
+    "@patternfly/react-core": "^4.75.2",
     "analytics-node": "^3.4.0-beta.3",
-    "express": "^4.17.1"
+    "babel-loader": "^8.1.0",
+    "express": "^4.17.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-react-jsx": "^7.12.1",
+    "css-loader": "^5.0.0",
+    "html-webpack-plugin": "next",
+    "mini-css-extract-plugin": "^1.2.1",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }

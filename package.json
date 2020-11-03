@@ -4,9 +4,10 @@
   "description": "Pendo + Segment",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve",
-    "build": "yarn clean && webpack",
-    "clean": "rimraf public"
+    "build": "npm run clean && webpack",
+    "clean": "rimraf public",
+    "start": "node server",
+    "dev": "webpack serve"
   },
   "repository": {
     "type": "git",

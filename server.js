@@ -1,6 +1,10 @@
 // create an express app
+<<<<<<< HEAD
 const express = require("express");
 const bodyParser = require("body-parser");
+=======
+const express = require("express")
+>>>>>>> origin/main
 const app = express();
 const Analytics = require('analytics-node');
 
@@ -28,6 +32,9 @@ app.post('/api/login', function (req, res) {
     });
 });
 
+app.get("/api-request", function (req, res) {
+    res.send(JSON.stringify({ status: 'success' }));
+
 // start the server listening for requests
-app.listen(process.env.PORT || 3000, 
-	() => console.log("Server is running..."));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Server is running at https://localhost:${port}...`));

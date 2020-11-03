@@ -19,7 +19,7 @@ module.exports = {
     contentBase: publicDir,
     compress: true,
     hot: true,
-    port: 8080
+    port: 3000
   },
   module: {
     rules: [
@@ -45,6 +45,18 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'page1.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'page2.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'login.html'
     }),
     new MiniCssExtractPlugin(),
     new webpack.HotModuleReplacementPlugin()

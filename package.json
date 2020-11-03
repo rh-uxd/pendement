@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rh-uxd/pendement#readme",
   "dependencies": {
+    "analytics-node": "^3.4.0-beta.3",
     "express": "^4.17.1"
   }
 }

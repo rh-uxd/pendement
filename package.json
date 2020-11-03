@@ -1,0 +1,24 @@
+{
+  "name": "pendement",
+  "version": "1.0.0",
+  "description": "pende mint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rh-uxd/pendement.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rh-uxd/pendement/issues"
+  },
+  "homepage": "https://github.com/rh-uxd/pendement#readme",
+  "dependencies": {
+    "analytics-node": "^3.4.0-beta.3",
+    "express": "^4.17.1"
+  }
+}

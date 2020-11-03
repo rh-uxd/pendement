@@ -15,11 +15,6 @@ app.use(bodyParser.json());
 // use the express-static middleware
 app.use(express.static("public"));
 
-// define the first route
-app.get("/", function (req, res) {
-  res.send("<h1>Hello World!</h1>")
-});
-
 // POST method route
 app.post('/api/login', function (req, res) {
     const { username } = req.body;
@@ -27,9 +22,6 @@ app.post('/api/login', function (req, res) {
         id: `${username}-id`
     });
 });
-
-app.get("/api-request", function (req, res) {
-    res.send(JSON.stringify({ status: 'success' }));
 
 // start the server listening for requests
 const port = process.env.PORT || 3000;

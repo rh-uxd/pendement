@@ -1,4 +1,5 @@
 import { PageSection, Title, Button } from '@patternfly/react-core';
+import { trackButton } from '../tracking';
 
 export const HomePage = () => (
   <PageSection>
@@ -6,6 +7,6 @@ export const HomePage = () => (
     <p>
       Some content.
     </p>
-    <Button>Definitely not tracked</Button>
+    <Button onClick={trackButton}>Definitely not tracked</Button>
   </PageSection>
 );

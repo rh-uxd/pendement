@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Page,
   PageHeader,
@@ -10,7 +10,8 @@ import {
   NavList
 } from '@patternfly/react-core';
 import { HomePage, Page1, Page2, LoginPage } from './pages';
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Switch, Route, Link, Redirect, useLocation } from 'react-router-dom';
+import { trackPage } from './tracking';
 
 const NavItem = ({ to, children }) => (
   <li className="pf-c-nav__item">
@@ -23,6 +24,9 @@ const NavItem = ({ to, children }) => (
 export const App = () => {
   const [username, setUsername] = useState(sessionStorage.getItem('username'));
   const [userId, setUserId] = useState('');
+  const location = useLocation();
+  useEffect(() => trackPage(location.pathname), [location]);
+  
   const isLoggedIn = Boolean(username);
   const logoProps = {
     to: isLoggedIn ? '/' : '/login',

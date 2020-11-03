@@ -22,6 +22,7 @@ const NavItem = ({ to, children }) => (
 
 export const App = () => {
   const [username, setUsername] = useState(sessionStorage.getItem('username'));
+  const [userId, setUserId] = useState('');
   const isLoggedIn = Boolean(username);
   const logoProps = {
     to: isLoggedIn ? '/' : '/login',
@@ -31,7 +32,7 @@ export const App = () => {
       <PageHeaderToolsGroup>
         <PageHeaderToolsItem>
           <div style={{ marginRight: '16px' }}>
-            {username}
+            {username} ({userId})
           </div>
         </PageHeaderToolsItem>
         <PageHeaderToolsItem>
@@ -75,7 +76,10 @@ export const App = () => {
     <Switch>
       <Route path="/login">
         <Page header={Header}>
-          <LoginPage onLogin={name => setUsername(name)} />
+          <LoginPage onLogin={(name, id) => {
+            setUsername(name);
+            setUserId(id);
+          }} />
         </Page>
       </Route>
       {isLoggedIn

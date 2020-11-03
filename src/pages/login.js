@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 export const LoginPage = ({ onLogin: onLoginProp }) => {
   const history = useHistory();
   const [username, setUserName] = useState("");
-  const [userId, setUserId] = useState("")
   const postOnLogin = async username => {
     const requestOptions = {
       method: "POST",
@@ -16,8 +15,7 @@ export const LoginPage = ({ onLogin: onLoginProp }) => {
     };
     const response = await fetch("/api/login", requestOptions);
     const data = await response.json();
-    setUserId(data.id)
-    onLoginProp(username, data.id);
+    onLoginProp(username, data.email);
   };
   const onLogin = async () => {
     sessionStorage.setItem("username", username);

@@ -36,11 +36,13 @@ function createUser(id) {
     analytics.identify({
       userId: id,
       traits: {
+        id,
         name,
         email,
       },
     });
     allUsers[id] = {
+      id,
       name,
       email,
     };
@@ -53,6 +55,10 @@ function createUser(id) {
 app.post("/api/login", function (req, res) {
   const { username } = req.body;
   const type = createUser(username);
+  analytics.track({
+    userId: username,
+    event: "Login",
+  });
   res.json({
     id: username,
     name: allUsers[username].name,

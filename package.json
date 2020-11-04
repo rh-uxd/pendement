@@ -4,7 +4,7 @@
   "description": "Pendo + Segment",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && webpack",
+    "build": "npm run clean && webpack --mode production",
     "clean": "rimraf public",
     "start": "node server",
     "dev": "webpack serve"

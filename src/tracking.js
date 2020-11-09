@@ -19,8 +19,5 @@ export function trackUser(username, email) {
   if (window.analytics) {
     window.analytics.identify(username, { email });
   }
-  if (window.pendo) {
-    window.pendo.identify(username, email);
-  }
 }
 

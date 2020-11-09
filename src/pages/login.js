@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PageSection, Title, TextInput, Button } from "@patternfly/react-core";
 import { useHistory } from "react-router-dom";
+import { trackUser } from '../tracking';
 
 export const LoginPage = ({ onLogin: onLoginProp }) => {
   const history = useHistory();
@@ -15,6 +16,7 @@ export const LoginPage = ({ onLogin: onLoginProp }) => {
     };
     const response = await fetch("/api/login", requestOptions);
     const data = await response.json();
+    trackUser(username, data.email);
     onLoginProp(username, data.email);
   };
   const onLogin = async () => {

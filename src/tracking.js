@@ -14,3 +14,13 @@ export function trackPage(pathname) {
     window.analytics.page(pathname);
   }
 }
+
+export function trackUser(username, email) {
+  if (window.analytics) {
+    window.analytics.identify(username, { email });
+  }
+  if (window.pendo) {
+    window.pendo.identify(username, email);
+  }
+}
+
